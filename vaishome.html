@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8">
+<title>home feed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function clickCounter() {
+      if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "Total votes " + localStorage.clickcount;
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+    function clickCounterlike() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcountlike) {
+        localStorage.clickcountlike = Number(localStorage.clickcountlike)+1;
+      } else {
+        localStorage.clickcountlike = 1;
+      }
+      document.getElementById("resultlike").innerHTML = "Likes " + localStorage.clickcountlike;
+    } else {
+      document.getElementById("resultlike").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  function clickCounterdislike() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcountdislike) {
+        localStorage.clickcountdislike = Number(localStorage.clickcountdislike)+1;
+      } else {
+        localStorage.clickcountdislike = 1;
+      }
+      document.getElementById("resultdislike").innerHTML = "Dislikes " + localStorage.clickcountdislike;
+    } else {
+      document.getElementById("resultdislike").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+
+</script>
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: -70px;
+  z-index: 99;
+  height: 270px;
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+div.hidden{
+        display: none;
+        }
+        div.visible{
+        display: block;
+        }
+        .comment_box{
+        border-style:solid;
+        border-width:1px;
+        float:left;
+        background-color:#d4d4cb;
+        width:280px;
+        padding-left:20px;
+        padding-top:25px;
+        padding-bottom:10px;
+        }
+        .search_wrap {
+  width: 500px;
+  margin: 30px auto;
+}
+.search_wrap .search_box {
+  position: relative;
+  width: 500px;
+  height: 60px;
+}
+.search_wrap .search_box.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 18px;
+}
+.search_wrap .search_box .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: #7690da;
+  z-index: 1;
+}  
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <a href="#default" id="logo">READIT</a>
+  <div id="navbar-center">
+    <div class="search_wrap search_wrap">
+        <div class="search box">
+            <input type="text"class= "input" placeholder="search...">
+            <div class="btn btn_common">
+                <i class="fas fa-search"></i>
+            </div>
+
+        </div>
+    </div>
+</div>
+  <div id="navbar-right">
+    <a href="#home">MYPROFILE</a>
+    <a href="#contact">ABOUTUS</a>
+    <a href="#about">CONTACTUS</a>
+    <a href="#about">LOGOUT</a>
+  </div>
+</div>
+
+<div style="margin-top:210px;padding:15px 15px 2500px;font-size:30px">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <div class="container">
+          <div class="row">
+            <!-- Main content -->
+            <form action="#">
+              <div class="col-lg-9 mb-3">
+                <div class="row text-left mb-5">
+                  <div class="col-lg-6 mb-3 mb-sm-0">
+                    <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" style="width: 100%;">
+                    <select class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" data-toggle="select" tabindex="-98">
+                      <option> Categories </option>
+                      <option> Learn </option>
+                      <option> Share </option>
+                      <option> Build </option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 text-lg-right">
+                    <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" style="width: 100%;">
+                        <select class="form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" data-toggle="select" tabindex="-98">
+                          <option> Filter by </option>
+                          <option> Votes </option>
+                          <option> Replys </option>
+                          <option> Views </option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" value="apply">
+            </form>
+            
+            
+              <!-- End of post 1 -->
+              <script type="text/javascript">
+                function showCommentBox(){
+                var div=document.getElementById('comment');
+                div.className='visible';
+                }
+              </script>
+                <form action="#" method="post">
+                <input type="button" value="Ask question" onclick="showCommentBox()"><br>
+                <div class="hidden" id="comment">
+                <p>Write your question<br><textarea name="comments" rows="3" cols="100"></textarea><br><br>
+                <select class="form-control bg-white bg-op-9 text-sm w-lg-50" data-toggle="select">
+                    <option> Select Categories </option>
+                    <option> Learn </option>
+                    <option> Share </option>
+                    <option> Build </option>
+                </select>
+                <input type="submit" name="sub" value="post">
+                </p>
+                </div>
+                </form>
+              <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+                <div class="row align-items-center">
+                  <div class="col-md-8 mb-3 mb-sm-0">
+                    <h5>
+                      <a href="#" class="text-primary">Drupal 8 quick starter guide</a>
+                    </h5>
+                    <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">20 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">KenyeW</a></p>
+                    <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#C++</a> <a class="text-black mr-2" href="#">#AppStrap Theme</a> <a class="text-black mr-2" href="#">#Wordpress</a> </div>
+                  </div> 
+    
+                  <div class="form-control bg-white bg-op-9 text-sm w-lg-50" >
+                    <form class="answer" action="#">
+                      <input type="text" placeholder="Reply answer" name="answer">
+                      <button type="submit">Submit</button>
+                    </form>
+                  </div>        
+                  
+                  <div class="col-md-4 op-7">
+                    <!--<div class="row text-center op-7">-->
+                      <div class="col px-1"> 
+                          <i class="ion-connection-bars icon-1x"></i>
+                           <p><button onclick="clickCounter()" type="button">Vote</button></p>
+                           <div id="result"></div>
+                        </div>
+                      <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <button class="d-block text-sm" onclick="openForm()">122 Replys</button>
+                        <!--replies-->  
+                      <div class="form-popup" id="myForm">
+                        <div class="profile-content">
+                          <div class="tab-content p-0">
+                             <div class="tab-pane fade active show" id="profile-post">
+                                <div class="timeline">
+                                      <div class="timeline-body">
+                                         <div class="timeline-header">
+                                            <span class="userimage"><img src="https://tse3.mm.bing.net/th?id=OIP.Y5IBeEfwFn6AIQHDitQGqwHaHa&pid=Api&P=0&w=300&h=300" alt=""></span>
+                                            <span class="username">User Name</span>
+                                            <span class="pull-right text-muted">1,282 Views</span>
+                                            <span class="date">16 Dec 2021</span>
+                                            <span class="time">08:17</span>
+                                         </div>
+                                         <div class="timeline-content">
+                                            <p class="lead">
+                                               <i class="fa fa-quote-left fa-fw pull-left"></i>
+                                               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis libero voluptatem deserunt earum, necessitatibus doloribus accusantium vitae nobis illum consequatur qui id fugiat blanditiis exercitationem, labore quam tempora molestias deleniti.
+                                               <i class="fa fa-quote-right fa-fw pull-right"></i>
+                                            </p>
+                                         </div>
+                                         <div class="timeline-footer">
+                                            
+                                            <button onclick="clickCounterlike()" class=" m-r-20 text-inverse-lighter fa fa-thumbs-up fa-fw fa-lg m-r-3" type="button">Like</button>
+                                            <button onclick="clickCounterdislike()" class=" m-r-15 text-inverse-lighter fa fa-thumbs-down fa-fw fa-lg m-r-3" type="button">Dislike</button><br>
+                                            <div id="resultlike" class=" m-r-20 text-inverse-lighter"></div>
+                                            <div id="resultdislike" class=" m-r-20 text-inverse-lighter"></div>
+                                              
+                                            
+                                         </div>
+                                      </div>
+                                    </div>
+                                </div>
+                             </div>
+                       </div>
+                       <button class="edit_button" onclick="closeForm()">Close</button> 
+                       </div>
+                       
+                      </div>
+    <!--replies--> 
+                   
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- Sidebar content -->
+            <div class="col-lg-3 mb-4 mb-lg-0 px-lg-0 mt-lg-0">
+                <div style="visibility: hidden; display: none; width: 285px; height: 801px; margin: 0px; float: none; position: static; inset: 85px auto auto;"></div><div data-settings="{&quot;parent&quot;:&quot;#content&quot;,&quot;mind&quot;:&quot;#header&quot;,&quot;top&quot;:10,&quot;breakpoint&quot;:992}" data-toggle="sticky" class="sticky" style="top: 85px;"><div class="sticky-inner">
+                  <div class="bg-white mb-3">
+                    <h4 class="px-3 py-4 op-5 m-0">
+                      Active Topics
+                    </h4>
+                    <hr class="m-0">
+                    <div class="pos-relative px-3 py-3">
+                      <h6 class="text-primary text-sm">
+                        <a href="#" class="text-primary">Why Bootstrap 4 is so awesome? </a>
+                      </h6>
+                      <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">39 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">AppStrapMaster</a></p>
+                    </div>
+                    <hr class="m-0">
+                    <div class="pos-relative px-3 py-3">
+                      <h6 class="text-primary text-sm">
+                        <a href="#" class="text-primary">Custom shortcut or command to launch command in terminal? </a>
+                      </h6>
+                      <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">58 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+                    </div>
+                    <hr class="m-0">
+                    <div class="pos-relative px-3 py-3">
+                      <h6 class="text-primary text-sm">
+                        <a href="#" class="text-primary">HELP! My Windows XP machine is down </a>
+                      </h6>
+                      <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">48 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+                    </div>
+                    <hr class="m-0">
+                    <div class="pos-relative px-3 py-3">
+                      <h6 class="text-primary text-sm">
+                        <a href="#" class="text-primary">HELP! My Windows XP machine is down </a>
+                      </h6>
+                      <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">38 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+                    </div>
+                    <hr class="m-0">
+                  </div>
+                  <div class="bg-white text-sm">
+                    <h4 class="px-3 py-4 op-5 m-0 roboto-bold">
+                      Stats
+                    </h4>
+                    <hr class="my-0">
+                    <div class="row text-center d-flex flex-row op-7 mx-0">
+                      <div class="col-sm-6 flex-ew text-center py-3 border-bottom border-right"> <a class="d-block lead font-weight-bold" href="#">300</a> Members </div>
+                      <div class="col-sm-6 col flex-ew text-center py-3 border-bottom mx-0"> <a class="d-block lead font-weight-bold" href="#">1.856</a> Posts </div>
+                    </div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+      
+      <style type="text/css">
+      body{
+          
+          color: #708090;
+      }
+      .icon-1x {
+          font-size: 24px !important;
+      }
+      a{
+          text-decoration:none;    
+      }
+      .text-primary, a.text-primary:focus, a.text-primary:hover {
+          color: #00ADBB!important;
+      }
+      .text-black, .text-hover-black:hover {
+          color: #000 !important;
+      }
+      .font-weight-bold {
+          font-weight: 700 !important;
+      }
+      form.answer input[type=text] {
+        font-size: 17px;
+        border: 1px solid #212529;
+        float: left;
+        width: 80%;
+        background: white;
+    }
+    .form-popup {
+      
+        display: none;
+        position: initial;
+        bottom: 0;
+        right: 10px;
+        border: 3px solid #f1f1f1;
+        z-index: 6;
+        }
+    
+      </style>
+      
+      <script>
+      function openForm() {
+            document.getElementById("myForm").style.display = "block";
+      }
+    
+      function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+      }
+      </script>
+</div>
+
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+</script>
+
+</body>
+</html>

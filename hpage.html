@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NAVBAR</title>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	<link href="stylehompage.css" rel="stylesheet">
+    <style>
+      .carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background-color: #fff;
+}
+.carousel-caption {
+  bottom: 220px;
+}
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  font-family: merienda;
+}
+.carousel-caption p {
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+  font-family: poppins;
+}
+.carousel-caption a {
+  text-transform: uppercase;
+  background: #262626;
+  padding: 20px 30px;
+  display: inline-block;
+  color: #fff;
+  margin-top: 15px;
+}
+.navbar-nav a {
+  font-family: poppins;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar-light .navbar-brand {
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: skyblue;
+}
+.navbar-nav {
+  text-align: center;
+}
+.nav-link {
+  padding: 0.2rem 1rem;
+}
+.nav-link.active,
+.nav-link:focus {
+  color: #fff;
+}
+.navbar-toggler {
+  padding: 7px 5px;
+  font-size: 20px;
+  line-height: 0.3;
+  background: #fff;
+}
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: black;
+}
+.w-100 {
+  height: 100vh;
+}
+@media only screen and (max-width: 767px) {
+  .navbar-nav.ml-auto {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .navbar-nav a {
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
+    </style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Readit</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<img src="images/readit" alt="">
+            
+            <div class="container">
+                <div class="search_wrap search_wrap">
+                    <div class="search box">
+                        <input type="text"class= "input" placeholder="search...">
+                        <div class="btn btn_common">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					</li>
+					<li class="nav-item">
+						<button type='submit' class='nav-link'>MyProfile</button>
+					</li>
+                    <li class="nav-item">
+                      <button type='submit' class='nav-link'>AboutUs</button>	
+					</li>
+					<li class="nav-item">
+						<button type='submit' class='nav-link'>ContactUs</button>
+					</li>
+					<li class="nav-item">
+						<button type='submit' class='nav-link'>Logout</button>
+				</ul>
+			</div>
+    </div>
+    </div>
+		</div>
+	</nav>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+		
+	
+</body>
+</html>

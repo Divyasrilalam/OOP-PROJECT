@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PracProfile</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="myprofile.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+body {
+  margin-top: 20px;
+  background-color:lightgrey;
+}
+.main {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topbar {
+  background-color: teal;
+  overflow: hidden;
+  width: 1045px;
+}
+.topbar a {
+  float: right;
+  color: whitesmoke;
+  text-align: center;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+img {
+  height: 150px;
+  position: relative;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100%;
+}
+.profile-pic-div {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(219, 8, 8, 0.7);
+  color: rgb(240, 6, 142);
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.sidebar {
+  background-color:#333;
+  color: white;
+  height: 330px;
+}
+.sidebar a {
+  margin-left: 60px;
+  display: block;
+  color:white;
+  padding-bottom: 10px;
+  font-size: 10px;
+  text-decoration: none;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: left;
+}
+.content{
+    background-color:whitesmoke;
+    position: right;
+    top: -334px;
+  padding: 4px 4px;
+  left: 335px;
+
+    
+}
+body {font-family: Arial;}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  position: relative;
+  top: -350px;
+  left: -15px;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 20px 100px;
+  transition: 0.3s;
+  font-size: 20px;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+.tab button.active {
+  background-color:#ccc;
+}
+.tabcontent {
+  display: none;
+  padding: 10px 50px;
+  border: 1px solid #ccc;
+  border-top: none;
+  font-size: 5px;
+  position: relative;
+  top: -340px;
+  left: -15px;
+}
+.edit_button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: initial;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
+
+        .form-popup {
+        display: none;
+        position: initial;
+        bottom: 0;
+        right: 10px;
+        border: 3px solid #f1f1f1;
+        z-index: 6;
+        }
+
+        .form-container {
+        max-width: 300px;
+        padding: 8px;
+        background-color: white;
+        font-size: 10px;
+        }
+
+        .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+        }
+
+        .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        }
+
+        .form-container .cancel {
+        background-color: firebrick;
+        }
+
+        .form-container .btn:hover, .edit_button:hover {
+        opacity: 1;
+        }
+        body{
+    margin-top:20px;
+    background:rgb(17, 17, 17);
+}
+.fa-fw {
+    width: auto;
+    text-align: center;
+}
+
+form.comment input[type=text] {
+    font-size: 17px;
+    border: 1px solid #212529;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.profile-content {
+    padding: 25px;
+    border-radius: 4px
+}
+
+.profile-content:after,
+.profile-content:before {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.profile-content .tab-content,
+.profile-content .tab-pane {
+    background: 0 0
+}
+
+.bg-white {
+    background-color: #fff!important;
+}
+.p-10 {
+    padding: 10px!important;
+}
+.media.media-xs .media-object {
+    width: 32px;
+}
+.m-b-2 {
+    margin-bottom: 2px!important;
+}
+.timeline .timeline-body {
+    margin-left: 23%;
+    margin-right: 17%;
+    background: #fff;
+    position: relative;
+    padding: 20px 25px;
+    border-radius: 6px
+}
+.timeline .timeline-body>div+div {
+    margin-top: 15px
+}
+.timeline-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e7eb;
+    line-height: 30px
+}
+.timeline-header .userimage {
+    float: left;
+    width: 34px;
+    height: 34px;
+    border-radius: 40px;
+    overflow: hidden;
+    margin: -2px 10px -2px 0
+}
+
+.timeline-header .username {
+    font-size: 16px;
+    font-weight: 600
+}
+
+.timeline-header .username,
+.timeline-header .username a {
+    color: #2d353c
+}
+
+.timeline img {
+    max-width: 100%;
+    display: block
+}
+
+.timeline-content {
+    letter-spacing: .25px;
+    line-height: 18px;
+    font-size: 13px
+}
+
+.timeline-content:after,
+.timeline-content:before {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.timeline-title {
+    margin-top: 0
+}
+
+.timeline-footer {
+    background: #fff;
+    border-top: 1px solid #e2e7ec;
+    padding-top: 15px
+}
+
+.timeline-footer a:not(.btn) {
+    color: #575d63
+}
+
+.timeline-footer a:not(.btn):focus,
+.timeline-footer a:not(.btn):hover {
+    color: #2d353c
+}
+
+.timeline-likes {
+    color: #6d767f;
+    font-weight: 600;
+    font-size: 12px
+}
+
+.timeline-likes .stats-right {
+    float: right
+}
+
+.timeline-likes .stats-total {
+    display: inline-block;
+    line-height: 20px
+}
+
+.timeline-likes .stats-icon {
+    float: left;
+    margin-right: 5px;
+    font-size: 9px
+}
+
+.timeline-likes .stats-icon+.stats-icon {
+    margin-left: -2px
+}
+
+.timeline-likes .stats-text {
+    line-height: 20px
+}
+
+.timeline-likes .stats-text+.stats-text {
+    margin-left: 15px
+}
+.lead {
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.text-danger, .text-red {
+    color: #ff5b57!important;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+
+            <div class="row">
+                <div class="col-md-4 mt-1">
+                    <div class="cardtext-center sidebar">
+                        <div class="card-body">
+                            <div class="profile-pic-div">
+                            <img src="profileimg.jpeg" id="photo" class="rounded-circle" width="150">
+                             <input type="file" id="file">
+                             <label for="file" id="photoBtn">Choose photo</label>
+                            
+                          </div>
+                        </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-1">
+                    <div class="card mb-3 content">
+                        <h1 class="m-3 pt-3">Info</h1>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Full Name</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    Lisa
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Email</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    abc@gmail.com
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="edit_button" onclick="openForm()">Edit</button>
+                           <div class="form-popup" id="myForm">
+                                 <button class="edit_button" onclick="openForm_name()">Edit Username</button>
+                                 <button class="edit_button" onclick="openForm_password()">Edit Password</button>
+                                 <button class="edit_button" onclick="closeForm()">Close</button>
+                           </div>                             
+                              
+                                    <div class="form-popup" id="myForm_name">
+                                       <form action="#" class="form-container">
+                                             <h1>Enter Username</h1>
+                                 
+                                             <label for="userID"><b>User Name</b></label>
+                                             <input type="text" placeholder="Enter user name" name="userID" required>
+                                 
+                                             <button type="submit" class="btn">Done</button>
+                                             <button type="button" class="btn cancel" onclick="closeForm_name()">Close</button>
+                                       </form>
+                                    </div>                           
+                                 
+                                    <div class="form-popup" id="myForm_password">                                    
+                                       <form action="#" class="form-container">
+                                             <h1>Enter Password</h1>
+                                 
+                                             <label for="psw"><b>Old Password</b></label>
+                                             <input type="password" placeholder="Enter old password" name="psw" required>
+                                 
+                                             <label for="psw"><b>New Password</b></label>
+                                             <input type="password" placeholder="Enter new password" name="psw" required>
+
+                                             <label for="psw"><b>Confirm Password</b></label>
+                                             <input type="password" placeholder="Confirm password" name="psw" required>
+                                 
+                                             <button type="submit" class="btn">Done</button>
+                                             <button type="button" class="btn cancel" onclick="closeForm_password()">Close</button>
+                                       </form>
+                                       </div>
+                            
+                              </div>      
+                </div>
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'Questions')">AskedQuestions</button>
+                    <button class="tablinks" onclick="openCity(event, 'Answers')">Answered</button>
+                    
+                  </div>
+                  
+                  <div id="Questions" class="tabcontent">
+                    <div class="container-box">
+                      <div class="profile-content">
+                        <div class="tab-content p-0">
+                           <div class="tab-pane fade active show" id="profile-post">
+                              <div class="timeline">
+                                    <div class="timeline-body">
+                                       <div class="timeline-header">
+                                          <span class="userimage"><img src="https://tse3.mm.bing.net/th?id=OIP.Y5IBeEfwFn6AIQHDitQGqwHaHa&pid=Api&P=0&w=300&h=300" alt=""></span>
+                                          <span class="username">User Name</span>
+                                          <span class="pull-right text-muted">1,282 Views</span>
+                                          <span class="date">16 Dec 2021</span>
+                                          <span class="time">08:17</span>
+                                       </div>
+                                       <div class="timeline-content">
+                                         <p> <b style="font-size:large;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio quas labore error! Impedit, iste!</b></p><hr>
+                                          <p class="lead">
+                                           
+                                          </p>
+                                       </div>
+                                       <div class="timeline-footer">
+                                          
+                                          <button onclick="clickCounterlike()" class=" m-r-20 text-inverse-lighter fa fa-thumbs-up fa-fw fa-lg m-r-3" type="button">Like</button>
+                                          <button onclick="clickCounterdislike()" class=" m-r-15 text-inverse-lighter fa fa-thumbs-down fa-fw fa-lg m-r-3" type="button">Dislike</button><br>
+                                          <div id="resultlike" class=" m-r-20 text-inverse-lighter"></div>
+                                          <div id="resultdislike" class=" m-r-20 text-inverse-lighter"></div><hr>
+                                           
+                                          
+                                       </div>
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                     </div>
+                     </div>
+                    </div>
+                  </div>
+                  
+                  <div id="Answers" class="tabcontent">
+                    <div class="container-box">
+                      <div class="profile-content">
+                        <div class="tab-content p-0">
+                           <div class="tab-pane fade active show" id="profile-post">
+                              <div class="timeline">
+                                    <div class="timeline-body">
+                                       <div class="timeline-header">
+                                          <span class="userimage"><img src="https://tse3.mm.bing.net/th?id=OIP.Y5IBeEfwFn6AIQHDitQGqwHaHa&pid=Api&P=0&w=300&h=300" alt=""></span>
+                                          <span class="username">User Name</span>
+                                          <span class="pull-right text-muted">1,282 Views</span>
+                                          <span class="date">16 Dec 2021</span>
+                                          <span class="time">08:17</span>
+                                       </div>
+                                       <div class="timeline-content">
+                                        <p> <b style="font-size:large;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio quas labore error! Impedit, iste!</b></p><hr>
+                                          <p class="lead">
+                                           <i class="fa fa-quote-left fa-fw pull-left"></i>
+                                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis libero voluptatem deserunt earum, necessitatibus doloribus accusantium vitae nobis illum consequatur qui id fugiat blanditiis exercitationem, labore quam tempora molestias deleniti.
+                                             <i class="fa fa-quote-right fa-fw pull-right"></i>
+                                          </p>
+                                       </div>
+                                       <div class="timeline-footer">
+                                          
+                                          <button onclick="clickCounterlike()" class=" m-r-20 text-inverse-lighter fa fa-thumbs-up fa-fw fa-lg m-r-3" type="button">Like</button>
+                                          <button onclick="clickCounterdislike()" class=" m-r-15 text-inverse-lighter fa fa-thumbs-down fa-fw fa-lg m-r-3" type="button">Dislike</button><br>
+                                          <div id="resultlike" class=" m-r-20 text-inverse-lighter"></div>
+                                          <div id="resultdislike" class=" m-r-20 text-inverse-lighter"></div><hr>
+                                           
+                                          
+                                       </div>
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                     </div>
+                     </div>
+                    </div> 
+                  </div>
+                  
+                  <script>
+                  function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                      tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                      tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                  }
+                  function openForm() {
+                  document.getElementById("myForm").style.display = "block";
+                  }
+                  function openForm_name() {
+                  document.getElementById("myForm_name").style.display = "block";
+                  }
+                  function openForm_password() {
+                  document.getElementById("myForm_password").style.display = "block";
+                  }
+
+                  function closeForm_name() {
+                  document.getElementById("myForm_name").style.display = "none";
+                  }
+                  function closeForm_password() {
+                  document.getElementById("myForm_password").style.display = "none";
+                  }
+                  
+                  function closeForm() {
+                  document.getElementById("myForm").style.display = "none";
+                  }
+                  function clickCounterlike() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcountlike) {
+        localStorage.clickcountlike = Number(localStorage.clickcountlike)+1;
+      } else {
+        localStorage.clickcountlike = 1;
+      }
+      document.getElementById("resultlike").innerHTML = "Likes " + localStorage.clickcountlike;
+    } else {
+      document.getElementById("resultlike").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  function clickCounterdislike() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcountdislike) {
+        localStorage.clickcountdislike = Number(localStorage.clickcountdislike)+1;
+      } else {
+        localStorage.clickcountdislike = 1;
+      }
+      document.getElementById("resultdislike").innerHTML = "Dislikes " + localStorage.clickcountdislike;
+    } else {
+      document.getElementById("resultdislike").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+                  </script>
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
